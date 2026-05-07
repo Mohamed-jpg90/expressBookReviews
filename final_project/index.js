@@ -15,7 +15,7 @@ app.use("/customer/auth/*", function auth(req,res,next){
 if (!req.session.authorization){
     return res.status(403).json({message:"user not logged in "})
 }
-let token = req.session.authorization.accessTonken
+let token = req.session.authorization.accessToken
 
 try{
     let verify = jwt.verify(token,"access")
